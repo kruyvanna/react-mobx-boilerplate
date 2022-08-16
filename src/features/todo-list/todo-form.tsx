@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useStore } from "../../hooks/use-store";
-import { Button, Input, Row } from "antd";
+import { Button, Input, Row, Form } from "antd";
 import { useTranslation } from "react-i18next";
 
 export const TodoForm = () => {
@@ -17,15 +17,17 @@ export const TodoForm = () => {
 
   return (
     <Row className="todo-new">
-      <Input
-        className="todo-input"
-        type="text"
-        value={newTodo}
-        onChange={(e) => setTodo(e.target.value)}
-      />
-      <Button type="primary" onClick={addTodo}>
-        {t("add")}
-      </Button>
+      <Form onFinish={addTodo}>
+        <Input
+          className="todo-input"
+          type="text"
+          value={newTodo}
+          onChange={(e) => setTodo(e.target.value)}
+        />
+        <Button type="primary" onClick={addTodo}>
+          {t("add")}
+        </Button>
+      </Form>
     </Row>
   );
 };
