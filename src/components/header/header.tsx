@@ -28,8 +28,7 @@ const Header = () => {
   }
 
   const onMenuItemClicked = (info: MenuInfo) => {
-    console.log("menu clicked", info.key);
-    history.push("profile");
+    history.push(info.key);
   };
 
   return (

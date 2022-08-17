@@ -10,6 +10,7 @@ import Home from "../home/home";
 import { Card } from "antd";
 import { useStore } from "../../hooks/use-store";
 import Header from "../../components/header/header";
+import { ProductList } from "../product/product-list";
 
 const LoggedIn = () => {
   const rootStore = useStore();
@@ -28,6 +29,9 @@ const LoggedIn = () => {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/product">
+            <ProductList />
           </Route>
           <Redirect to="/" />
         </Switch>
