@@ -5,7 +5,7 @@ import { useStore } from "../../hooks/use-store";
 import { observer } from "mobx-react";
 import { Menu } from "antd";
 import { MenuInfo } from "rc-menu/lib/interface";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 let items = [
   { label: "Home", key: "home" },
@@ -18,7 +18,7 @@ const Header = () => {
     uiStore: { authStore },
   } = useStore();
 
-  const navigation = useNavigate();
+  // const navigate = useNavigate();
 
   if (authStore.isLoggedIn) {
     items.push({
@@ -29,7 +29,7 @@ const Header = () => {
 
   const onMenuItemClicked = (info: MenuInfo) => {
     console.log("menu clicked", info.key);
-    navigation("new page");
+    // navigate("new page");
   };
 
   return (
