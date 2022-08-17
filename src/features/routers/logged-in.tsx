@@ -8,11 +8,20 @@ import {
 import MainRouter from "./main-router";
 import Home from "../home/home";
 import { Card } from "antd";
+import { useStore } from "../../hooks/use-store";
+import Header from "../../components/header/header";
 
 const LoggedIn = () => {
+  const rootStore = useStore();
+  const {
+    uiStore,
+    uiStore: { authStore },
+  } = rootStore;
+
   return (
     <Card className="site-content">
       <Router>
+        {authStore.isLoggedIn && <Header />}
         <Switch>
           <Route exact path="/">
             <MainRouter />

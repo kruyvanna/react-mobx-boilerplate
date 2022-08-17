@@ -24,7 +24,6 @@ function App() {
   return (
     <ConfigProvider direction={uiStore.direction}>
       <Layout className="App">
-        {authStore.isLoggedIn && <Header />}
         <Content className="site-layout">
           {authStore.authState === AuthState.LoggedIn ? (
             <LoggedIn />
